@@ -9,11 +9,13 @@ workflows:
       vars:
         PACKAGE_NAME: "com.example"
       java: 17
-    triggering:
-      events:
-        - push
-      branches:
-        - main
+      triggering:
+        events:
+          - push
+        branch_filters:
+          target:
+            - main
+
     scripts:
       - name: Set up local.properties
         script: |
