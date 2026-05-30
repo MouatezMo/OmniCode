@@ -1,0 +1,8 @@
+USER REQUEST: {{user_request}}
+
+CURRENT WORKSPACE HTML:
+```html
+{{current_html}}
+```
+
+Provide the entirely new updated HTML file below. Output ONLY the raw HTML code without any markdown framing block (no ```html ... ```).

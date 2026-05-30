@@ -1,0 +1,6 @@
+{
+  "name": "Aura Terminal",
+  "description": "Terminal IDE with AI Website Builder",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
