@@ -16,6 +16,6 @@ workflows:
       - name: Build Android Release APK
         script: |
           chmod +x gradlew
-          ./gradlew assembleReleaseUnsigned
+          ./gradlew assembleRelease -Pandroid.injected.signing.store.file=$HOME/.android/debug.keystore -Pandroid.injected.signing.store.password=android -Pandroid.injected.signing.key.alias=androiddebugkey -Pandroid.injected.signing.key.password=android
     artifacts:
       - app/build/outputs/apk/**/release/*.apk
