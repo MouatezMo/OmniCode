@@ -1,6 +1,6 @@
 workflows:
   android-workflow:
-    name: Android Debug APK Workflow
+    name: Android Release APK Workflow
     max_build_duration: 30
     instance_type: mac_mini_m1
     environment:
@@ -13,9 +13,13 @@ workflows:
       - name: Set up local.properties
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-      - name: Build Android Debug APK
+      - name: Upgrade Gradle Wrapper
+        script: |
+          # هذا السطر يقوم بترقية الجيرادل تلقائياً للنسخة المطلوبة لحل مشكلة الفشل
+          ./gradlew wrapper --gradle-version 9.3.1
+      - name: Build Android Release APK
         script: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/apk/**/*.apk
+      - app/build/outputs/apk/**/release/*.apk
