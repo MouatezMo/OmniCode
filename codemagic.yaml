@@ -16,6 +16,6 @@ workflows:
       - name: Build Android Release APK
         script: |
           chmod +x gradlew
-          ./gradlew assembleRelease
+          ./gradlew assembleReleaseUnsigned
     artifacts:
       - app/build/outputs/apk/**/release/*.apk
